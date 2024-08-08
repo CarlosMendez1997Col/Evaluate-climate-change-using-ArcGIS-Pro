@@ -2,6 +2,8 @@
 
 ## Description
 
+Global Climate Models (GCMs) CCCma-CanESM2, MOHC-HadGEM2-ES and MIROC-MIROC5
+
 ## Prerequisites and libraries
 
 ```python
@@ -19,7 +21,7 @@ foobar.singularize('phenomena')
 
 ## Data acquisition and download
 
-Data Historical precipitation 2001-2005 SAM using the Global Climate Models (GCMs) CCCma-CanESM2, MOHC-HadGEM2-ES and MIROC-MIROC5
+Data Historical precipitation 2001-2005 SAM 
 
 ### Model CCCma-CanESM2
 [pr_SAM-20_CCCma-CanESM2_historical_r1i1p1_INPE-Eta_v1_mon_200101-200512.nc](http://esg-dn1.nsc.liu.se/thredds/fileServer/esg_dataroot3/cordexdata/cordex/output/SAM-20/INPE/CCCma-CanESM2/historical/r1i1p1/INPE-Eta/v1/mon/pr/v20180507/pr_SAM-20_CCCma-CanESM2_historical_r1i1p1_INPE-Eta_v1_mon_200101-200512.nc)
