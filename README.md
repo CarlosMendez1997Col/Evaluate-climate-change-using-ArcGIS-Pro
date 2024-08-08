@@ -1,1 +1,1 @@
-# Evaluate climate change using GIS
+# Evaluate climate change projections using GIS
