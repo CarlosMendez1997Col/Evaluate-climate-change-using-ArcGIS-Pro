@@ -1,23 +1,29 @@
-The Earth System Grid Federation (ESGF)
-
 # Evaluate climate change projections using GIS
 
 ## Description
 
-## Prerequisites
+## Prerequisites and libraries
 
-```bash
-CCC
+```python
+import foobar
+
+# returns 'words'
+foobar.pluralize('word')
+
+# returns 'geese'
+foobar.pluralize('goose')
+
+# returns 'phenomenon'
+foobar.singularize('phenomena')
 ```
 
-## Table of Contents
+## Data acquisition and download
 
 
-## How to Install and Run the Project
+## How to use and run the project
 
 
-## How to Use the Project
-
+## 
 
 ## Credits and more information
 
@@ -33,26 +39,13 @@ CCC
 ## License
 
 
-## Usage2
-
-```python
-import foobar
-
-# returns 'words'
-foobar.pluralize('word')
-
-# returns 'geese'
-foobar.pluralize('goose')
-
-# returns 'phenomenon'
-foobar.singularize('phenomena')
-```
-
 ## Contributing
 
 Pull requests are welcome. For major changes, please open an issue first
 to discuss what you would like to change.
 
 Please make sure to update tests as appropriate.
+
+## License
 
 ## License
