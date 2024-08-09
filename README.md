@@ -21,7 +21,7 @@ foobar.singularize('phenomena')
 
 ## Data acquisition and download
 
-### Parameters 
+### [CORDEX Parameters](https://esgf-node.ipsl.upmc.fr/search/cordex-ipsl/)
 
 | Item                    | Precipitation 2021-2030 SAM                                 | Near Surface Air Temperature 2021-2030 SAM                  |
 |-------------------------|-------------------------------------------------------------|-------------------------------------------------------------|
