@@ -21,6 +21,27 @@ foobar.singularize('phenomena')
 
 ## Data acquisition and download
 
+### Parameters 
+
+| Item                    | Precipitation 2021-2030 SAM                                 | Near Surface Air Temperature 2021-2030 SAM                  |
+|-------------------------|-------------------------------------------------------------|-------------------------------------------------------------|
+| Project                 | CORDEX                                                      | CORDEX                                                      |
+| Product                 | output                                                      | output                                                      |
+| Domain                  | SAM-20                                                      | SAM-20                                                      |
+| Institute               | INPE                                                        | INPE                                                        |
+| Driving Model           | CCCma-CanESM2 (1), MIROC-MIROC5 (1) and MOHC-HadGEM2-ES (1) | CCCma-CanESM2 (1), MIROC-MIROC5 (1) and MOHC-HadGEM2-ES (1) |
+| Experiment              | rcp45                                                       | rcp45                                                       |
+| Experiment Family       | RCP                                                         | RCP                                                         |
+| Ensemble                | r1i1p1                                                      | r1i1p1                                                      |
+| RCM Model               | Eta                                                         | Eta                                                         |
+| Downscaling Realisation | v1                                                          | v1                                                          |
+| Bias Adjustment         | None                                                        | None                                                        |
+| Time Frequency          | mon                                                         | mon                                                         |
+| Variable                | pr                                                          | tas                                                         |
+| Variable Long Name      | Precipitation                                               | Near-Surface Air Temperature                                |
+| CF Satandard Name       | precipitation flux                                          | air temperature                                             |
+| Datanode                | esg-dn1.nsc.liu.se                                          | esg-dn1.nsc.liu.se                                          |
+
 ### Projection and scenario RCP45 of precipitation 2021-2030 SAM  
 
 #### Model CCCma-CanESM2
