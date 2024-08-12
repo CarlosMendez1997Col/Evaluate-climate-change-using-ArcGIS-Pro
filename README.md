@@ -7,16 +7,22 @@ Models (GCMs) CCCma-CanESM2, MOHC-HadGEM2-ES and MIROC-MIROC5
 ## Prerequisites and libraries
 
 ```python
-import foobar
+import arcpy
+import datetime as dt
+import os
+import arcgis
+import NetCDF4
+import csv
 
-# returns 'words'
-foobar.pluralize('word')
+# Arcpy
+from arcpy.ia import*
 
-# returns 'geese'
-foobar.pluralize('goose')
+# arcgis
+from arcgis.gis import GIS
+from arcgis.raster import *
+from arcgis.raster.functions import *
+from arcgis.raster.analytics import *
 
-# returns 'phenomenon'
-foobar.singularize('phenomena')
 ```
 
 ## Data acquisition and download
