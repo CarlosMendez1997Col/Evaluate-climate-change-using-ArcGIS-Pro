@@ -37,7 +37,7 @@ from arcgis.raster.analytics import *
 
 ## Data acquisition and download
 
-The data used in this program come from the Coordinated Regional Downscaling Experiment (CORDEX) [CORDEX Program](https://esgf-node.ipsl.upmc.fr/projects/esgf-ipsl/) and the World Climate Research Program (WCRP), using the CCCma-CanESM2, MOHC-HadGEM2-ES and MIROC-MIROC5 models.
+The data used in this program come from the Coordinated Regional Downscaling Experiment (CORDEX) [Website](https://esgf-node.ipsl.upmc.fr/projects/esgf-ipsl/) and the World Climate Research Program (WCRP), using the CCCma-CanESM2, MOHC-HadGEM2-ES and MIROC-MIROC5 models.
 
 
 | Item                    | Precipitation 2021-2030 SAM                                 | Near Surface Air Temperature 2021-2030 SAM                  |
@@ -61,10 +61,13 @@ The data used in this program come from the Coordinated Regional Downscaling Exp
 
 ### Projection and scenario RCP45 of precipitation 2021-2030 SAM  
 
-#### Model CCCma-CanESM2
-[pr_SAM-20_CCCma-CanESM2_rcp45_r1i1p1_INPE-Eta_v1_mon_202101-203012.nc](http://esg-dn1.nsc.liu.se/thredds/fileServer/esg_dataroot3/cordexdata/cordex/output/SAM-20/INPE/CCCma-CanESM2/rcp45/r1i1p1/INPE-Eta/v1/mon/pr/v20180507/pr_SAM-20_CCCma-CanESM2_rcp45_r1i1p1_INPE-Eta_v1_mon_202101-203012.nc)
+#### [Model CCCma-CanESM2](https://climate-modelling.canada.ca/climatemodeldata/cgcm4/CanESM2/index.shtml)
+
+[Data of CCma-CanESM2 model](http://esg-dn1.nsc.liu.se/thredds/fileServer/esg_dataroot3/cordexdata/cordex/output/SAM-20/INPE/CCCma-CanESM2/rcp45/r1i1p1/INPE-Eta/v1/mon/pr/v20180507/pr_SAM-20_CCCma-CanESM2_rcp45_r1i1p1_INPE-Eta_v1_mon_202101-203012.nc)
+
 #### Model MOHC-HadGEM2-ES
 [pr_SAM-20_MOHC-HadGEM2-ES_rcp45_r1i1p1_INPE-Eta_v1_mon_202101-203012.nc](http://esg-dn1.nsc.liu.se/thredds/fileServer/esg_dataroot3/cordexdata/cordex/output/SAM-20/INPE/MOHC-HadGEM2-ES/rcp45/r1i1p1/INPE-Eta/v1/mon/pr/v20180507/pr_SAM-20_MOHC-HadGEM2-ES_rcp45_r1i1p1_INPE-Eta_v1_mon_202101-203012.nc)
+
 #### Model MIROC-MIROC5
 [pr_SAM-20_MIROC-MIROC5_rcp45_r1i1p1_INPE-Eta_v1_mon_202101-203012](http://esg-dn1.nsc.liu.se/thredds/fileServer/esg_dataroot3/cordexdata/cordex/output/SAM-20/INPE/MIROC-MIROC5/rcp45/r1i1p1/INPE-Eta/v1/mon/pr/v20180507/pr_SAM-20_MIROC-MIROC5_rcp45_r1i1p1_INPE-Eta_v1_mon_202101-203012.nc)
 
