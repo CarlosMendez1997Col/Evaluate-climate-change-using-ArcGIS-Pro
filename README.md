@@ -6,6 +6,16 @@
 
 Evaluation of the `Climate Change Models (GCM)` CCCma-CanESM2, MOHC-HadGEM2-ES and MIROC-MIROC5, using Arcgis for Python. 
 
+Each section is described below:
+
+1. The first section shows how to Geoprocess NetCDF files and convert them to CRF (Cloud Raster Format).
+
+2. The second section evidences how to analyze trends and patterns in multidimensional data.
+
+3. The third section shows how to create animations and timelines of climate data. 
+
+4. The fourth and final section shows how to convert and export multidimensional data to tables and shapefile formats.
+
 ## Prerequisites and libraries
 
 ```python
