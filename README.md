@@ -2,8 +2,6 @@
 
 ## Description
 
-
-
 Evaluation of the `Climate Change Models (GCM)` CCCma-CanESM2, MOHC-HadGEM2-ES and MIROC-MIROC5, using Arcgis for Python. 
 
 Each section is described below:
@@ -39,7 +37,7 @@ from arcgis.raster.analytics import *
 
 ## Data acquisition and download
 
-### [CORDEX Parameters](https://esgf-node.ipsl.upmc.fr/projects/esgf-ipsl/)
+### [CORDEX Program](https://esgf-node.ipsl.upmc.fr/projects/esgf-ipsl/)
 
 | Item                    | Precipitation 2021-2030 SAM                                 | Near Surface Air Temperature 2021-2030 SAM                  |
 |-------------------------|-------------------------------------------------------------|-------------------------------------------------------------|
