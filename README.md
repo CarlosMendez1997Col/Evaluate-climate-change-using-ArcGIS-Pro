@@ -2,7 +2,9 @@
 
 ## Description
 
-Models (GCMs) CCCma-CanESM2, MOHC-HadGEM2-ES and MIROC-MIROC5
+
+
+Evaluation of the `Climate Change Models (GCM)` CCCma-CanESM2, MOHC-HadGEM2-ES and MIROC-MIROC5, using Arcgis for Python. 
 
 ## Prerequisites and libraries
 
