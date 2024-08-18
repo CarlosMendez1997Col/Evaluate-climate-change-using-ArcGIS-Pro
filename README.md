@@ -37,7 +37,8 @@ from arcgis.raster.analytics import *
 
 ## Data acquisition and download
 
-### [CORDEX Program](https://esgf-node.ipsl.upmc.fr/projects/esgf-ipsl/)
+The data used in this program come from the Coordinated Regional Downscaling Experiment (CORDEX) [CORDEX Program](https://esgf-node.ipsl.upmc.fr/projects/esgf-ipsl/) and the World Climate Research Program (WCRP), using the CCCma-CanESM2, MOHC-HadGEM2-ES and MIROC-MIROC5 models.
+
 
 | Item                    | Precipitation 2021-2030 SAM                                 | Near Surface Air Temperature 2021-2030 SAM                  |
 |-------------------------|-------------------------------------------------------------|-------------------------------------------------------------|
