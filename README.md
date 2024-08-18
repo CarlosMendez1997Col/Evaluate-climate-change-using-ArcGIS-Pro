@@ -78,10 +78,6 @@ from arcgis.raster.analytics import *
 #### Model MIROC-MIROC5
 [tas_SAM-20_MIROC-MIROC5_rcp45_r1i1p1_INPE-Eta_v1_mon_202101-203012.nc](http://esg-dn1.nsc.liu.se/thredds/fileServer/esg_dataroot3/cordexdata/cordex/output/SAM-20/INPE/MIROC-MIROC5/rcp45/r1i1p1/INPE-Eta/v1/mon/tas/v20180507/tas_SAM-20_MIROC-MIROC5_rcp45_r1i1p1_INPE-Eta_v1_mon_202101-203012.nc)
 
-## How to use and run the project
-
-## 
-
 ## Credits and more information
 
 [The Intergovernmental Panel on Climate Change](https://www.ipcc.ch/)
@@ -93,8 +89,9 @@ from arcgis.raster.analytics import *
 [The Earth System Grid Federation (ESGF)](https://esgf.llnl.gov/)
 
 
-## License
+## Conflict of Interest.
 
+The authors declare that there is no conflict of interest in the publication of this map and that all authors have approved it for publication.
 
 ## Contributing
 
@@ -102,5 +99,3 @@ Pull requests are welcome. For major changes, please open an issue first
 to discuss what you would like to change.
 
 Please make sure to update tests as appropriate.
-
-## License
