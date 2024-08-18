@@ -39,7 +39,7 @@ from arcgis.raster.analytics import *
 
 ## Data acquisition and download
 
-### [CORDEX Parameters](https://esgf-node.ipsl.upmc.fr/search/cordex-ipsl/)
+### [CORDEX Parameters](https://esgf-node.ipsl.upmc.fr/projects/esgf-ipsl/)
 
 | Item                    | Precipitation 2021-2030 SAM                                 | Near Surface Air Temperature 2021-2030 SAM                  |
 |-------------------------|-------------------------------------------------------------|-------------------------------------------------------------|
