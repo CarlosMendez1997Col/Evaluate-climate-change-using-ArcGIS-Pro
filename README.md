@@ -1,20 +1,22 @@
-# Evaluate climate change projections using GIS
+# Evaluate climate change using ArcGIS API for Python and ArcGIS Maps SDK for JavaScript
 
 ## Description
 
-Evaluation of the `Climate Change Models (GCM)` CCCma-CanESM2, MOHC-HadGEM2-ES and MIROC-MIROC5, using Arcgis for Python. 
+Evaluation of `Climate Change Projections ` of the Global Climate Models (GCM) CCCma-CanESM2, MOHC-HadGEM2-ES and MIROC-MIROC5, using Arcgis for Python and ArcGIS Maps SDK for JavaScript.
 
-Each section is described below:
+Each chapter is described below:
 
-1. The first section shows how to Geoprocess NetCDF files and convert them to CRF (Cloud Raster Format).
+1. The first chapter, shows how to Geoprocess NetCDF files and convert them to CRF (Cloud Raster Format).
 
-2. The second section evidences how to analyze trends and patterns in multidimensional data.
+2. The second section, explain how to analyze trends/patterns in multidimensional data. Also, calculate results using the following tools: Generate Multidimensional Anomaly, Generate Trend Raster and Predict Using Trend Raster.
 
-3. The third section shows how to create animations and timelines of climate data. 
+3. The third section, shows how to create animations and timelines of climate data using the `19 Bioclimate Projections of WorldClim` using ArcGIS Maps SDK for JavaScript. 
 
 4. The fourth and final section shows how to convert and export multidimensional data to tables and shapefile formats.
 
 ## Prerequisites and libraries
+
+### ArcGIS API for Python
 
 ```python
 import arcpy
@@ -34,6 +36,32 @@ from arcgis.raster.functions import *
 from arcgis.raster.analytics import *
 
 ```
+### ArcGIS Maps SDK for JavaScript
+
+```html
+<script>
+    require([
+      "esri/Map",
+      "esri/views/MapView",
+      "esri/layers/ImageryTileLayer",
+      "esri/layers/support/DimensionalDefinition",
+      "esri/layers/support/MultidimensionalSubset",    
+      "esri/widgets/Slider",
+      "esri/widgets/TimeSlider",
+      "esri/widgets/Legend",
+      "esri/request",
+      "esri/Color",
+      "esri/widgets/LayerList",
+      "esri/widgets/Expand",
+      "esri/layers/TileLayer",
+      "esri/layers/BaseTileLayer", 
+       "esri/Basemap",
+       ], 
+            (Map, MapView, ImageryTileLayer, DimensionalDefinition, MultidimensionalSubset,
+            Slider,TimeSlider, Legend, esriRequest, Color,LayerList, Expand, TileLayer, BaseTileLayer,Basemap) =>  
+<script>
+```
+
 
 ## Data acquisition and download
 
@@ -59,9 +87,20 @@ The data used in this program come from the Coordinated Regional Downscaling Exp
 | CF Satandard Name       | precipitation flux                                          | air temperature                                             |
 | Datanode                | esg-dn1.nsc.liu.se                                          | esg-dn1.nsc.liu.se                                          |
 
+CCMa-CanESM2 Model
+The second generation Canadian Earth System Model (CanESM2) (CanESM2) is the fourth generation coupled global climate model developed by the Canadian Centre for Climate Modelling and Analysis (CCCma) of Environment and Climate Change Canada. CanESM2 represents the Canadian contribution to the IPCC Fifth Assessment Report (AR5).
+
 [Model CCCma-CanESM2 information](https://climate-modelling.canada.ca/climatemodeldata/cgcm4/CanESM2/index.shtml)
 
+MOHC-HadGEM2-ES Model
+
+The HadGEM2 family includes a coupled atmosphere-ocean configuration, with or without a vertical extension in the atmosphere to include a well-resolved stratosphere, and an Earth-System configuration which includes dynamic vegetation, ocean biology and atmospheric chemistry.
+
 [Model MOHC-HadGEM2-ES information](https://www.metoffice.gov.uk/research/approach/modelling-systems/unified-model/climate-models/hadgem2)
+
+MIROC-MIROC5 Model 
+
+Model for Interdisciplinary Research On Climate
 
 [Model MIROC-MIROC5 information](https://catalogue.ceda.ac.uk/uuid/d90ca0077e3344c7840ca56e49f89ee7/?jump=related-docs-anchor)
 
@@ -84,13 +123,9 @@ The data used in this program come from the Coordinated Regional Downscaling Exp
 ## Credits and more information
 
 [The Intergovernmental Panel on Climate Change](https://www.ipcc.ch/)
-
 [World Climate Research Programme (WCRP)](https://www.wcrp-climate.org/)
-
 [The Coordinated Regional Downscaling Experiment (CORDEX)](https://cordex.org/)
-
 [The Earth System Grid Federation (ESGF)](https://esgf.llnl.gov/)
-
 
 ## Conflict of Interest.
 
