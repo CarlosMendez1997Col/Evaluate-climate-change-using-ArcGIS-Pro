@@ -1,0 +1,163 @@
+<html>
+
+<head>
+  <meta charset="utf-8" />  
+  <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
+  <link rel="stylesheet" href="https://js.arcgis.com/4.30/esri/themes/light/main.css" />
+  <script src="https://js.arcgis.com/4.30/"></script>
+
+  <style>
+    html, body,
+    #viewDiv {padding: 0; margin: 0; height: 100%; width: 100%;}
+    #rendererDiv {padding: 10px; width: 200px; min-height: 360px;}
+    .slider {height: 160px;width: 100%;}
+    .esri-slider__content {padding: 5px;}
+  </style>
+
+  <script>
+    require([
+      "esri/Map",
+      "esri/views/MapView",
+      "esri/layers/ImageryTileLayer",
+      "esri/layers/support/DimensionalDefinition",
+      "esri/layers/support/MultidimensionalSubset",    
+      "esri/widgets/Slider",
+      "esri/widgets/TimeSlider",
+      "esri/widgets/Legend",
+      "esri/request",
+      "esri/Color",
+      "esri/widgets/LayerList",
+      "esri/widgets/Expand",
+      "esri/layers/TileLayer",
+      "esri/layers/BaseTileLayer", 
+       "esri/Basemap",
+       ], 
+            (Map, MapView, ImageryTileLayer, DimensionalDefinition, MultidimensionalSubset, Slider,TimeSlider, Legend, esriRequest, Color,LayerList, Expand, TileLayer, BaseTileLayer,  Basemap) =>     
+  
+{
+      
+      let variableName;
+      const multidimensionalSubset = new MultidimensionalSubset({
+        subsetDefinitions: [
+          {
+            variableName: "SSP245", dimensionName: "StdTime",
+            values: [1893456000000, 3786912000000], isSlice: true
+          },                  
+          {
+            variableName: "SSP370", dimensionName: "StdTime",
+            values: [1893456000000, 3786912000000], isSlice: true
+          },
+          {
+            variableName: "SSP585", dimensionName: "StdTime",
+            values: [1893456000000, 3786912000000], isSlice: true
+          }
+        ]
+      });
+      
+      // All multidimensional files include the same variables “SSP245”, “SSP370” and “SSP585”.    
+      // The IDs of each of the 19 bioclimate projections are listed below.  
+      // *** Bioclimate Projections: (01) Annual Mean Temperature, id: {"fdaa1b7912e440efb9e29cf5d6156bb0"}
+      // *** Bioclimate Projections: (02) Mean Diurnal Range, id: {"8012b34e8c854d6fbcfe4eab437ea397"}
+      // *** Bioclimate Projections: (03) Isothermality, id: {"ef9f5d6a16ca41ada0c0075a8da46d48"}
+      // *** Bioclimate Projections: (04) Temperature Seasonality, id: {"64799fea8774463aad909020b6590dc8"}
+      // *** Bioclimate Projections: (05) Max Temperature of Warmest Month, id: {"8433250e0a4148f5a3889c66e78abdf1"}
+      // *** Bioclimate Projections: (06) Min Temperature of Coldest Month, id: {"c531d32ab5d746b88a884b6e54f3216e"}
+      // *** Bioclimate Projections: (07) Temperature Annual Range, id: {"808cfb3ab1614f8ab7e364de737e9e98"}
+      // *** Bioclimate Projections: (08) Mean Temperature of Wettest Quarter, id: {"b5990aa16fd94bb691a09449716ed7e5"}
+      // *** Bioclimate Projections: (09) Mean Temperature of Driest Quarter, id: {"231770161a46467e8de9fdd9fd92dad7"}
+      // *** Bioclimate Projections: (10) Mean Temperature of Warmest Quarter, id: {"3b98ddf1c78d4f0c88bd297f85847c68"}
+      // *** Bioclimate Projections: (11) Mean Temperature of Coldest Quarter, id: {"1a96d928c93c4e8fbc6a2391afd1da2f"}
+      // *** Bioclimate Projections: (12) Annual Precipitation, id: {"7bc0b8c75b0244b7a8128ae1f398bfc0"}
+      // *** Bioclimate Projections: (13) Precipitation of Wettest Month, id: {"36fde801c8124f93b46b727b9873c993"}
+      // *** Bioclimate Projections: (14) Precipitation of Driest Month, id: {"e26b01e4fa0a4aec9c5db991467b31a7"}
+      // *** Bioclimate Projections: (15) Precipitation Seasonality, id: {"33558b5fef8642338f33918d498f41cf"}
+      // *** Bioclimate Projections: (16) Precipitation of Wettest Quarter, id: {"1324c4e0c86a40e9b7529e91c6bdf220"}
+      // *** Bioclimate Projections: (17) Precipitation of Driest Quarter, id: {"86fe2a87fe9144f9a5c330a3b5890df0"}
+      // *** Bioclimate Projections: (18) Precipitation of Warmest Quarter, id: {"eb8227050ac24b3bb4a47abb924fbc56"}
+      // *** Bioclimate Projections: (19) Precipitation of Coldest Quarter, id: {"ec067623611d40d086193b21a3a4fce1"}
+      
+      const LayerBackground = new ImageryTileLayer
+      (
+        {
+        portalItem: {id: "fdaa1b7912e440efb9e29cf5d6156bb0"},
+        title: "Bioclimate Projections: (01) Annual Mean Temperature", multidimensionalSubset
+        }
+      );
+   
+      const Base_Map = new Map({
+ 
+        basemap: {portalItem: {id: "fdaa1b7912e440efb9e29cf5d6156bb0"}},
+        basemap: {portalItem: {id: "8054e038927a48419ee0dddb86006ad6"}},
+                 layers: [LayerBackground]
+                         });
+      
+      const view = new MapView({container: "viewDiv", map: Base_Map, zoom: -10, center: [-73, 5], constraints: {minScale: 56035099}});
+            
+      function changeVariableName(variableName) 
+      {
+        const multidimensionalDefinition = LayerBackground.multidimensionalDefinition;
+        multidimensionalDefinition.forEach((def) => (def.variableName = variableName));
+        LayerBackground.multidimensionalDefinition = multidimensionalDefinition;
+        const renderer = LayerBackground.renderer.clone();
+        const dimensions = LayerBackground.rasterInfo.multidimensionalInfo;
+        const variable = dimensions.variables.find((variable) => variable.name === variableName);
+        renderer.statistics = variable.statistics;
+        LayerBackground.renderer = renderer;
+      }
+      
+      
+      const variableNameSelect = document.getElementById("variableName");
+      variableNameSelect.addEventListener("change", () => 
+      {
+        if (!LayerBackground.loaded) 
+                          {return;}
+        
+        variableName = variableNameSelect.value;
+        changeVariableName(variableName);
+      });
+      
+      
+      view.whenLayerView(LayerBackground).then(() => 
+      {
+        const epochDates = LayerBackground.rasterInfo.multidimensionalInfo.variables[0].dimensions[0].values;
+        const dates = epochDates.map((item) => new Date(item));      
+        const timeSlider = new TimeSlider
+        (  
+          {
+              container: "timeSlider", mode: "instant", view: view, timeVisible: true,
+          fullTimeExtent: 
+              {
+              start: new Date(dates[0]), end: new Date(dates[dates.length - 1])
+              },
+          stops: 
+              {dates: dates}
+            }
+        );
+        view.ui.add(timeSlider, "bottom-left");
+      });
+      
+      const legend = new Legend({view: view});      
+      const legendExpand = new Expand({ expandIcon: "legend", expandTooltip: "Legend", view: view, content: legend, expanded: true});
+      
+      view.ui.add(legendExpand, "top-left");
+      view.ui.add("rendererDiv", "top-right");  
+      
+ }
+);
+    
+  </script>
+</head>  
+<body>
+  <div id="viewDiv"></div>
+  <div id="rendererDiv" class="esri-widget">
+    <h3 class="esri-widget__heading">Bioclimate Projections</h3>
+    <label style="text-align:center; font-size: 10px;" class="esri-feature-form__label"><br>
+    <label class="esri-feature-form__label">SSP Scenario</label>
+    <select id="variableName" class="esri-input esri-select">
+      <option value="SSP245">SSP245</option>
+      <option value="SSP370">SSP370</option>
+      <option value="SSP585">SSP585</option>
+    </select>   
+</body>
+
+</html>
